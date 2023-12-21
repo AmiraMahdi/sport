@@ -1,0 +1,14 @@
+<app-banner [b]="banner"></app-banner>
+
+<form #searchByScoreForm="ngForm" style="margin-bottom: 5%;" class="container" (ngSubmit)="searchByScore()">
+    <input class="form-control" style="margin-top: 5%; margin-bottom: 2%;" type="search"
+        placeholder="search match by score" aria-label="Search" [(ngModel)]="obj.searchScore" name="searchScore">
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+<div >{{erreur}}</div>
+<div >
+    <div *ngFor="let match of matches">
+        <app-result [x]="match"></app-result>
+
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="widget-next-match ">
+    <table class="table custom-table ">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>age</th>
+          <th>team</th>
+          <th>number</th>
+          
+          <th>position</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor= "let player of players">
+          <td><strong class="text-white">{{player._id}}</strong></td>
+          <td>{{player.playerName}}</td>
+          <td>{{player.age}}</td>
+          <td>{{player.team}}</td>
+          <td>{{player.number}}</td>
+          <td>{{player.position}}</td>
+          <td>
+            <button class="btn btn-warning" (click)="goToEditPlayer(player._id)">edit</button>
+            <button class="btn btn-success" (click)="goToDisplayPlayer(player._id)">display</button>
+            <button class="btn btn-primary"(click)="deletePlayer(player._id)">delete</button>
+          </td>
+        </tr>
+        
+        
+      </tbody>
+    </table>
+  </div>

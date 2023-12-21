@@ -1,0 +1,28 @@
+<app-banner [b]="banner"></app-banner>
+
+<form [formGroup]="weatherForm" style="margin-bottom: 5%;" class="container ">
+    <div class="form-group ">
+        <input class="form-control" style="margin-top: 5%; margin-bottom: 2%;" type="search" placeholder="city...."
+            aria-label="Search" formControlName="weatherSearch" name="searchWeather">
+    </div>
+    <div *ngIf="weatherForm.controls['weatherSearch'].invalid &&
+             (weatherForm.controls['weatherSearch'].touched ||
+              weatherForm.controls['weatherSearch'].dirty)">
+        <div *ngIf="weatherForm.controls['weatherSearch'].errors.required" style="color: red;"> City is required
+        </div>
+        <div *ngIf="weatherForm.controls['weatherSearch'].errors.minlength" style="color: red;"> City should have at
+            least 3 carac</div>
+    </div>
+    <div>
+        <h4> Here is city: {{searchedValue}} </h4>
+        <h4> Temperature: {{weather?.temperature}} </h4>
+        <h4> Humidity: {{weather?.humidity}} </h4>
+        <h4> Pressure: {{weather?.pressure}} </h4>
+        <h4> Speed wind: {{weather?.speed}} </h4>
+        <h4> icone: <img [src]="weather?.icon" alt=""> </h4>
+        
+
+    </div>
+
+    <button class="btn btn-primary" type="submit" (click)="weatherSearch()">Search</button>
+</form>

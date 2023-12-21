@@ -1,0 +1,40 @@
+
+<form #searchStadiumForm="ngForm" style="margin-bottom: 5%;" class="container" (ngSubmit)="searchByStadium()">
+  <input class="form-control" style="margin-top: 5%; margin-bottom: 2%;" type="search" placeholder="Insert Stadium"
+      aria-label="Search"  name="searchStadium" [(ngModel)]="obj.search">
+  <button class="btn btn-primary" type="submit">Search</button>
+</form>
+
+
+
+<div class="widget-next-match ">
+  <table class="table custom-table ">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>foundation</th>
+        <!-- <th>stadium</th> -->
+        <th>owner</th>
+        <th *ngIf="isDisplayed">actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teams">
+        <td><strong class="text-white">{{team._id}}</strong></td>
+        <td>{{team.teamName}}</td>
+        <td>{{team.foundation}}</td>
+        <!-- <td>{{team.stadium}}</td> -->
+        <td>{{team.owner}}</td>
+
+        <td *ngIf="isDisplayed">
+          <button class="btn btn-warning" (click)="goToEditTeam(team._id)">edit</button>
+          <button class="btn btn-success" (click)="goToDisplayTeam(team._id)">display</button>
+          <button class="btn btn-primary" (click)="goToDeleteTeam(team._id)">delete</button>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>

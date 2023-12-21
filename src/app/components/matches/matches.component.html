@@ -1,0 +1,23 @@
+<app-banner [b]="banner"></app-banner>
+
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 " style="margin-bottom: 5%;">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Team Name" [(ngModel)]="term" name="search"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="matches.length == 0" class="text-danger">
+  there is no matches found
+</div>
+<div *ngFor="let match of matches | customFilter:term">
+  <app-result [x]="match"></app-result>
+</div>

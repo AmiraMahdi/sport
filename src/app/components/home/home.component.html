@@ -1,0 +1,33 @@
+<app-cup-event></app-cup-event>
+
+
+
+<div class="container">
+
+    <app-result [x]="match"></app-result>
+
+
+
+
+</div>
+
+
+<div class="latest-news">
+    <div class="container">
+        <h2 style="text-align: center;">Latest news</h2>
+        <div class="row no-gutters">
+
+            <div class="col-md-4" *ngFor="let player of lastPlayers">
+                <app-info [y]="player"></app-info>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<app-standings></app-standings>
+
+<app-blog></app-blog>

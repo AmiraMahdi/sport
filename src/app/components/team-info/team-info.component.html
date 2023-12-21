@@ -1,0 +1,32 @@
+<app-banner [b]="banner"></app-banner>
+<div class="container">
+    <div class="widget-next-match ">
+        <table class="table custom-table ">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Name</th>
+              <th>Foundation</th>
+              <th>Owner</th>
+              <th>Players</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong class="text-white">{{foundTeam._id}}</strong></td>
+              <td>{{foundTeam.teamName}}</td>
+              <td>{{foundTeam.foundation}}</td>
+              <td>{{foundTeam.owner}}</td>
+              <td >
+                <span *ngFor="let player of foundTeam.players">
+                  {{player.playerName}},{{player.position}} <br>
+                </span>
+               
+              </td>
+            </tr>
+      
+      
+          </tbody>
+        </table>
+      </div>
+    </div>

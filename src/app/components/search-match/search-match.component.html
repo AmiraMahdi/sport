@@ -1,0 +1,7 @@
+<app-banner [b]="banner"></app-banner>
+
+<form #searchForm="ngForm" style="margin-bottom: 5%;" class="container" (ngSubmit)="searchByTeam()">
+    <input class="form-control" style="margin-top: 5%; margin-bottom: 2%;" type="search" placeholder="Insert Team"
+        aria-label="Search" [(ngModel)]="obj.search" name="searchTeam">
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
